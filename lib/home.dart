@@ -1,3 +1,4 @@
+import 'package:caps/layanan.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -137,7 +138,7 @@ class Home extends StatelessWidget {
                               style: TextButton.styleFrom(
                                   backgroundColor: Colors.lightBlue[900]),
                               onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Beranda()));
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Layanan()));
                               },
                               child: Text(
                                 "Login",
@@ -217,23 +218,74 @@ class Beranda extends StatelessWidget {
                       fontSize: 30.0,
                       fontFamily: 'LeagueSpartan',
                       fontWeight: FontWeight.bold,
-                      color: Colors.blue.shade900
+                      color: Color.fromRGBO(17, 0, 158, 1),
+
                     ),),
                     ),
                     Container(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: Text("\"Jaga Kesehatan Mentalmu Mulai Sekarang\"",
+                      style:
+                        TextStyle(
+                          color: Color.fromRGBO(17, 0, 158, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15
 
+                        ),),
+                    ),
+                    Container(
+                      width: 350,
+                      padding: EdgeInsets.only(bottom: 9),
+                      child: 
+                      Image.asset("assets/image/calltoaction.png"),
                     )
 
                   ],
                 ),
-              )
-              ,
+              ),
+              // Container(
+              //   child: Column(
+              //     children: [
+              //       Container(
+              //         child: Text("Call-to-Action",
+              //         ),
+              //       )
+              //     ],
+              //   ),
+              // )
+              
               Container(
+                padding: EdgeInsets.only(top: 20),
                 width: double.infinity,
-                child:
-                Image.asset("assets/image/rileks.png", fit: BoxFit.fitWidth,),
-              )
-            ],
+                decoration: new BoxDecoration(color: Color.fromRGBO(17, 0, 158, 1)),
+                child: Column(
+                children: [
+                  Container(
+
+                    child: Text("Layanan Unggulan", style:
+                      TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 25
+                      ),),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(top: 20),
+                    child: 
+                    Image.asset("assets/image/gambarunggulan.png"),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(bottom: 20),
+                    child: Text("Teknik Relaksasi", style:
+                    TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 25
+                    ),),
+                    )
+                  ],
+              ),
+              )],
           ),
           // child: Column(
 

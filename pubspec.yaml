@@ -72,6 +72,10 @@ flutter:
      - assets/image/logo-app.png
      - assets/image/calltoaction.png
      - assets/image/rileks.png
+     - assets/image/gambarunggulan.png
+     - assets/image/tanganhp.png
+     - assets/image/robot.png
+     - assets/image/human.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
