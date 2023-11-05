@@ -67,6 +67,8 @@ flutter:
    assets:
 #     - images/a_dot_burr.jpeg
 #     - images/a_dot_ham.jpeg
+
+     - assets/image/note.png
      - assets/image/test.png
      - assets/image/logo.png
      - assets/image/logo-app.png
@@ -76,6 +78,12 @@ flutter:
      - assets/image/tanganhp.png
      - assets/image/robot.png
      - assets/image/human.png
+     - assets/image/notebook.png
+     - assets/image/buly.png
+     - assets/image/fotomanusia.png
+     - assets/image/dokter.png
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -89,10 +97,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-fonts:
-  - family: LeagueSpartan
-    fonts:
-      - asset: assets/fonts/LeagueSpartan-Bold.ttf
+#fonts:
+#  - family: LeagueSpartan
+#    fonts:
+#      - asset: assets/fonts/LeagueSpartan.ttf
 #   fonts:
 ##     -family:
 ##       fonts:
@@ -105,10 +113,10 @@ fonts:
 ##         - asset: assets/fonts/LeagueSpartan-Regular.ttf
 ##         - asset: assets/fonts/LeagueSpartan-SemiBold.ttf
 ##         - asset: assets/fonts/LeagueSpartan-Thin.ttf
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+     - family: LeagueSpartan
+       fonts:
+         - asset: assets/fonts/LeagueSpartan-Bold.ttf
+#         - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

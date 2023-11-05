@@ -1,3 +1,4 @@
+import 'package:caps/artikelrujukan.dart';
 import 'package:caps/layanan.dart';
 import 'package:flutter/material.dart';
 
@@ -138,7 +139,7 @@ class Home extends StatelessWidget {
                               style: TextButton.styleFrom(
                                   backgroundColor: Colors.lightBlue[900]),
                               onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Layanan()));
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => artikelRujukan()));
                               },
                               child: Text(
                                 "Login",
