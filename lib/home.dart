@@ -18,10 +18,15 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isKeyboard = MediaQuery.of(context).viewInsets.bottom != 0;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+
+
 
       body:
       Container(
+
           height: double.infinity,
           width: double.infinity,
           decoration: const BoxDecoration(
@@ -31,9 +36,12 @@ class Home extends StatelessWidget {
 
           ),
           child:
-            Center(
-              child: Column(
+            Container(
+
+              child:
+                Column(
                 children: <Widget>[
+
                   Container(
                     child: Image.asset("assets/image/logo.png"),
                     margin: EdgeInsets.only(top: 150),
@@ -66,6 +74,7 @@ class Home extends StatelessWidget {
                       margin: EdgeInsets.only(top: 5),
                       width: 250,
                       child: TextField(
+
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(10.0),
                             hintText: 'Email',
@@ -84,6 +93,8 @@ class Home extends StatelessWidget {
                       margin: EdgeInsets.only(top: 5),
                       width: 250,
                       child: TextField(
+                        obscureText: true,
+                        obscuringCharacter: "*",
                         decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(10.0),
                             hintText: 'Password',
@@ -104,38 +115,79 @@ class Home extends StatelessWidget {
                     margin: EdgeInsets.only(top: 10),
                     width: 250,
 
+
                     child: Center(
                       child: Row(
                         children: [
-                          Container(
+
+                          Align(
+                            alignment: Alignment.topLeft,
                             child: Column(
                               children: [
-                                Container(
-                                  child: const Align(
-                                    alignment: Alignment.topLeft,
-                                    child: Text("Don't have an account?"),
 
-                                  )
+                                // Container(
+                                //   child: const Align(
+                                //     alignment: Alignment.topLeft,
+                                //     child: Text("Don't have an account?"),
+                                //
+                                //   )
+                                // ),
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        child: Text("Don't Have An Account? \nSign up"),
+                                      ),
+                                      // TextButton(
+                                      //   onPressed: () {},
+                                      //   child: Text('Cancel'),
+                                      //   style: ButtonStyle(
+                                      //     alignment: Alignment.centerLeft, // <-- had to set alignment
+                                      //     padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                                      //       EdgeInsets.zero, // <-- had to set padding to zero
+                                      //     ),
+                                      //   ),
+                                      // ),
+                                    ],
+                                  ),
+
                                 ),
-                                Container(
-
-                                  child: const Align(
-                                    alignment: Alignment.topLeft,
-                                    child: TextButton(
-                                        onPressed: null, 
-                                        child: Text("Sign up")),
-                                  )
-                                )
+                                // Align(
+                                //
+                                //   alignment: Alignment.topLeft,
+                                //
+                                //   child: TextButton(
+                                //     onPressed: null,
+                                //     child: Text("Sign in", textAlign: TextAlign.left),
+                                //
+                                //   ),
+                                // )
+                                // Container(
+                                //
+                                //   child: const Align(
+                                //     alignment: Alignment.topLeft,
+                                //     child: TextButton(
+                                //         onPressed: null,
+                                //         child: Text("Sign up")),
+                                //   )
+                                // )
+                                // Align(
+                                //
+                                //   child: TextButton(),
+                                //
+                                // )
                               ],
                             ),
 
 
                           ),
-                          Container(
+                          Expanded(
 
-                            margin: EdgeInsets.only(left: 5),
-                            width: 90,
+
+
                             child: TextButton(
+
                               style: TextButton.styleFrom(
                                   backgroundColor: Colors.lightBlue[900]),
                               onPressed: () {
@@ -178,6 +230,33 @@ class Home extends StatelessWidget {
                             )),
                       ),
                     ]),
+                  ),
+                  Container(
+
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Image(
+                              image: AssetImage("assets/google_logo.png"),
+                              height: 25.0,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Text(
+                                'Sign in with Google',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
                   )
 
                 ],
