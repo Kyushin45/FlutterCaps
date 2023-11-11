@@ -18,7 +18,7 @@ class Layanan extends StatelessWidget {
           children: <Widget>[
             Container(
               margin: EdgeInsets.all(5),
-              alignment: Alignment.center,
+              alignment: Alignment.center,s
               child: 
               Image.asset("assets/image/tanganhp.png"),
             ),

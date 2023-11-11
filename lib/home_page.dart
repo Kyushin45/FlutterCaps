@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:cupertino_icons/cupertino_icons.dart';
 
 class MyPage extends StatefulWidget {
   const MyPage({super.key});
@@ -22,6 +23,7 @@ class _MyPageState extends State {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Image Picker"),
+          backgroundColor: Color.fromRGBO(17, 0, 158, 1),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,7 +35,7 @@ class _MyPageState extends State {
               child: DottedBorder(
                   borderType: BorderType.RRect,
                   radius: const Radius.circular(12),
-                  color: Colors.blueGrey,
+                  color:Color.fromRGBO(17, 0, 158, 1),
                   strokeWidth: 1,
                   dashPattern: const [5, 5],
                   child: SizedBox.expand(
@@ -43,7 +45,7 @@ class _MyPageState extends State {
                           fit: BoxFit.cover)
                           : const Icon(
                         Icons.image_outlined,
-                        color: Colors.blueGrey,
+                        color: Color.fromRGBO(17, 0, 158, 1),
                       ),
                     ),
                   )),
@@ -58,7 +60,7 @@ class _MyPageState extends State {
                   height: 50,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.blueGrey),
+                      color: Color.fromRGBO(17, 0, 158, 1)),
                   child: Material(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.transparent,
@@ -91,7 +93,7 @@ class _MyPageState extends State {
                   height: 50,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.blueGrey),
+                      color: Color.fromRGBO(17, 0, 158, 1)),
                   child: Material(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.transparent,

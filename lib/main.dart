@@ -1,125 +1,417 @@
+import 'package:caps/artikelrujukan.dart';
+import 'package:caps/home_page.dart';
+import 'package:caps/layanan.dart';
+import 'package:caps/test.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+void main(){
+  runApp(
+
+      MaterialApp(
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: Home()
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    final isKeyboard = MediaQuery.of(context).viewInsets.bottom != 0;
     return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      resizeToAvoidBottomInset: false,
+
+
+
+      body:
+      Container(
+
+          height: double.infinity,
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/image/test.png"),
+                fit: BoxFit.cover),
+
+          ),
+          child:
+            Container(
+
+              child:
+                Column(
+                children: <Widget>[
+
+                  Container(
+                    child: Image.asset("assets/image/logo.png"),
+                    margin: EdgeInsets.only(top: 150),
+                  ),
+                  Container(
+                    child:
+                      Text("Jangan Biarkan Diri Anda Sendirian. Bersama, Kita Peduli",style: TextStyle(fontSize: 14),),
+                      margin: EdgeInsets.only(top: 5),
+
+
+
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 5),
+                    width: 250,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(10.0),
+                          hintText: 'Username',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0)
+                            ),
+                            filled: true,
+                            fillColor: Colors.grey[200]
+
+                        ),
+                      )
+                  ),
+                  Container(
+                      margin: EdgeInsets.only(top: 5),
+                      width: 250,
+                      child: TextField(
+
+                        decoration: InputDecoration(
+                            contentPadding: EdgeInsets.all(10.0),
+                            hintText: 'Email',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20.0),
+
+                            ),
+
+                            filled: true,
+                            fillColor: Colors.grey[350]
+
+                        ),
+                      )
+                  ),
+                  Container(
+                      margin: EdgeInsets.only(top: 5),
+                      width: 250,
+                      child: TextField(
+                        obscureText: true,
+                        obscuringCharacter: "*",
+                        decoration: InputDecoration(
+                            contentPadding: EdgeInsets.all(10.0),
+                            hintText: 'Password',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20.0)
+                            ),
+                            filled: true,
+                            fillColor: Colors.grey[300],
+
+
+
+                        ),
+
+                      )
+
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 10),
+                    width: 250,
+
+
+                    child: Center(
+                      child: Row(
+                        children: [
+
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Column(
+                              children: [
+
+                                // Container(
+                                //   child: const Align(
+                                //     alignment: Alignment.topLeft,
+                                //     child: Text("Don't have an account?"),
+                                //
+                                //   )
+                                // ),
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        child: Text("Don't Have An Account? \nSign up"),
+                                      ),
+                                      // TextButton(
+                                      //   onPressed: () {},
+                                      //   child: Text('Cancel'),
+                                      //   style: ButtonStyle(
+                                      //     alignment: Alignment.centerLeft, // <-- had to set alignment
+                                      //     padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                                      //       EdgeInsets.zero, // <-- had to set padding to zero
+                                      //     ),
+                                      //   ),
+                                      // ),
+                                    ],
+                                  ),
+
+                                ),
+                                // Align(
+                                //
+                                //   alignment: Alignment.topLeft,
+                                //
+                                //   child: TextButton(
+                                //     onPressed: null,
+                                //     child: Text("Sign in", textAlign: TextAlign.left),
+                                //
+                                //   ),
+                                // )
+                                // Container(
+                                //
+                                //   child: const Align(
+                                //     alignment: Alignment.topLeft,
+                                //     child: TextButton(
+                                //         onPressed: null,
+                                //         child: Text("Sign up")),
+                                //   )
+                                // )
+                                // Align(
+                                //
+                                //   child: TextButton(),
+                                //
+                                // )
+                              ],
+                            ),
+
+
+                          ),
+                          Expanded(
+
+
+
+                            child: TextButton(
+
+                              style: TextButton.styleFrom(
+                                  backgroundColor: Colors.lightBlue[900]),
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyPage()));
+                              },
+                              child: Text(
+                                "Login",
+                                style: TextStyle(
+                                  color: Colors.white
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child:
+                    Row(children: <Widget>[
+                      Expanded(
+                        child: new Container(
+                            margin: const EdgeInsets.only(left: 10.0, right: 20.0),
+                            child: Divider(
+                              color: Colors.lightBlue[900],
+                              height: 50,
+                            )),
+                      ),
+                      Text("OR", style:
+                        TextStyle(
+                          color: Colors.lightBlue[900],
+                          fontSize: 20.0
+                        ),),
+                      Expanded(
+                        child: new Container(
+                            margin: const EdgeInsets.only(left: 20.0, right: 10.0),
+                            child: Divider(
+                              color: Colors.lightBlue[900],
+                              height: 50,
+                            )),
+                      ),
+                    ]),
+                  ),
+                  Container(
+
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Image(
+                              image: AssetImage("assets/google_logo.png"),
+                              height: 25.0,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Text(
+                                'Sign in with Google',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                  )
+
+                ],
+
+              ),
+
+              // Foreground widget here
+            )
+      )
     );
   }
 }
+
+class Beranda extends StatelessWidget {
+  const Beranda({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+      appBar: AppBar(
+
+        title: Image.asset("assets/image/logo-app.png"),
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.white,
+        elevation: 0,
+
+      ),
+      body:
+        Center(
+          child: Column(
+            children: <Widget>[
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      child: Text("Call-to-Action", style:
+                    TextStyle(
+                      fontSize: 30.0,
+                      fontFamily: 'LeagueSpartan',
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(17, 0, 158, 1),
+
+                    ),),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: Text("\"Jaga Kesehatan Mentalmu Mulai Sekarang\"",
+                      style:
+                        TextStyle(
+                          color: Color.fromRGBO(17, 0, 158, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15
+
+                        ),),
+                    ),
+                    Container(
+                      width: 350,
+                      padding: EdgeInsets.only(bottom: 9),
+                      child: 
+                      Image.asset("assets/image/calltoaction.png"),
+                    )
+
+                  ],
+                ),
+              ),
+              // Container(
+              //   child: Column(
+              //     children: [
+              //       Container(
+              //         child: Text("Call-to-Action",
+              //         ),
+              //       )
+              //     ],
+              //   ),
+              // )
+              
+              Container(
+                padding: EdgeInsets.only(top: 20),
+                width: double.infinity,
+                decoration: new BoxDecoration(color: Color.fromRGBO(17, 0, 158, 1)),
+                child: Column(
+                children: [
+                  Container(
+
+                    child: Text("Layanan Unggulan", style:
+                      TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 25
+                      ),),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(top: 20),
+                    child: 
+                    Image.asset("assets/image/gambarunggulan.png"),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(bottom: 20),
+                    child: Text("Teknik Relaksasi", style:
+                    TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 25
+                    ),),
+                    )
+                  ],
+              ),
+              )],
+          ),
+          // child: Column(
+
+            // children: [
+            //   Container(
+            //     padding: EdgeInsets.only(top: 60),
+            //     child: Text("Call-to-Action", style:
+            //       TextStyle(
+            //         fontSize: 30.0,
+            //         fontFamily: 'LeagueSpartan',
+            //         fontWeight: FontWeight.bold,
+            //         color: Colors.blue.shade900
+            //       ),),
+            //   ),
+            //   Container(
+            //     child: Text("Jaga Kesehatan Mentalmu Mulai Sekarang", style: TextStyle(
+            //       fontSize: 16.0,
+            //       fontFamily: 'LeagueSpartan',
+            //       fontWeight: FontWeight.bold,
+            //       color: Colors.blue.shade900
+            //     ),),
+            //   ),
+            //   Container(
+            //     width: 280,
+            //     child:
+            //     Image.asset("assets/image/calltoaction.png"),
+            //   ),
+            //   Container(
+            //     width: double.infinity,
+            //     child: Expanded(
+            //       child: Image.asset("assets/image/rileks.png",fit: BoxFit.fitHeight,),
+            //     )
+            //
+            //   )
+            // ],
+          ),
+        );
+
+    // );
+  }
+}
+
+
+
+
+
+
