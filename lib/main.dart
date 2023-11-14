@@ -1,8 +1,11 @@
 import 'package:caps/artikelrujukan.dart';
 import 'package:caps/home_page.dart';
 import 'package:caps/layanan.dart';
+import 'package:caps/menu.dart';
+import 'package:caps/register.dart';
 import 'package:caps/test.dart';
 import 'package:flutter/material.dart';
+
 
 void main(){
   runApp(
@@ -50,7 +53,7 @@ class Home extends StatelessWidget {
                   ),
                   Container(
                     child:
-                      Text("Jangan Biarkan Diri Anda Sendirian. Bersama, Kita Peduli",style: TextStyle(fontSize: 14),),
+                      Text("Jangan Biarkan Diri Anda Sendirian. Bersama, Kita Peduli",style: TextStyle(fontSize: 14,fontFamily:  'LeagueSpartan',fontWeight: FontWeight.bold),),
                       margin: EdgeInsets.only(top: 5),
 
 
@@ -139,8 +142,21 @@ class Home extends StatelessWidget {
                                   child: Column(
                                     children: [
                                       Container(
-                                        child: Text("Don't Have An Account? \nSign up"),
+                                        child: Text("Don't Have An Account?"),
                                       ),
+                                      Container(
+                                        child: TextButton(
+                                          onPressed: (){
+                                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => register()));
+                                          }
+
+                                          ,
+                                          child: Text("Sign up"
+                                          ,style: TextStyle(
+                                              color: Colors.blue
+                                            ),),
+                                        ),
+                                      )
                                       // TextButton(
                                       //   onPressed: () {},
                                       //   child: Text('Cancel'),
@@ -193,7 +209,7 @@ class Home extends StatelessWidget {
                               style: TextButton.styleFrom(
                                   backgroundColor: Colors.lightBlue[900]),
                               onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyPage()));
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Beranda()));
                               },
                               child: Text(
                                 "Login",
@@ -316,7 +332,7 @@ class Beranda extends StatelessWidget {
                         ),),
                     ),
                     Container(
-                      width: 350,
+                      width: 280,
                       padding: EdgeInsets.only(bottom: 9),
                       child: 
                       Image.asset("assets/image/calltoaction.png"),
@@ -335,39 +351,58 @@ class Beranda extends StatelessWidget {
               //     ],
               //   ),
               // )
-              
-              Container(
+              Flexible(flex: 1,child: Container(
                 padding: EdgeInsets.only(top: 20),
                 width: double.infinity,
+
                 decoration: new BoxDecoration(color: Color.fromRGBO(17, 0, 158, 1)),
                 child: Column(
-                children: [
-                  Container(
+                  children: [
+                    Container(
 
-                    child: Text("Layanan Unggulan", style:
+                      child: Text("Layanan Unggulan", style:
                       TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 25
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 25
                       ),),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(top: 20),
-                    child: 
-                    Image.asset("assets/image/gambarunggulan.png"),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(bottom: 20),
-                    child: Text("Teknik Relaksasi", style:
-                    TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 25
-                    ),),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(top: 20),
+                      child:
+                      Image.asset("assets/image/gambarunggulan.png"),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(bottom: 20),
+                      child: Text("Teknik Relaksasi", style:
+                      TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 25
+                      ),),
+                    ),
+                    Container(
+                      child: TextButton(
+
+                        style: TextButton.styleFrom(
+                            backgroundColor: Colors.white),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => Layanan()));
+                        },
+                        child: Text(
+                          "Lanjut Ke Halaman Selanjutnya",
+                          style: TextStyle(
+                              color:Color.fromRGBO(17, 0, 158, 1)
+                          ),
+                        ),
+                      ),
                     )
                   ],
-              ),
-              )],
+                ),
+              ))
+
+              
+            ],
           ),
           // child: Column(
 

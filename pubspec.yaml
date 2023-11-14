@@ -122,9 +122,10 @@ flutter:
 ##         - asset: assets/fonts/LeagueSpartan-Regular.ttf
 ##         - asset: assets/fonts/LeagueSpartan-SemiBold.ttf
 ##         - asset: assets/fonts/LeagueSpartan-Thin.ttf
-     - family: LeagueSpartan
-       fonts:
-         - asset: assets/fonts/LeagueSpartan-Bold.ttf
+  fonts:
+    - family: LeagueSpartan
+      fonts:
+        - asset: assets/fonts/LeagueSpartan-Bold.ttf
 #         - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

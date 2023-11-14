@@ -22,13 +22,14 @@ class _MyPageState extends State {
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Image Picker"),
+          title: const Text("Pendeteksi Ekpresi Wajah"),
           backgroundColor: Color.fromRGBO(17, 0, 158, 1),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
+              decoration: new BoxDecoration(color: Color.fromRGBO(100, 153, 233, 1)),
               margin: const EdgeInsets.all(20),
               width: size.width,
               height: 250,
