@@ -1,5 +1,5 @@
-import 'package:caps/artikelrujukan.dart';
-import 'package:caps/home_page.dart';
+import 'package:caps/views/artikelrujukan.dart';
+import 'package:caps/views/home_page.dart';
 import 'package:caps/test.dart';
 import 'package:flutter/material.dart';
 
