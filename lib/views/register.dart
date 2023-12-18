@@ -22,7 +22,7 @@ class _registerState extends State<register> {
 
   Future<void> _register() async {
     final response = await http.post(
-      Uri.parse('http://192.168.56.118/registerAndroid'),
+      Uri.parse('https://b759-36-68-52-116.ngrok-free.app/registerAndroid'),
       headers: <String, String>{'Content-Type': 'application/json'},
       body: jsonEncode(<String, String>{
         'fullname': _fullNameController.text,

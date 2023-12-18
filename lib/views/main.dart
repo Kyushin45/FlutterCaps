@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
 
   Future<void> _login() async {
     final response = await http.post(
-      Uri.parse('http://192.168.56.118/loginAndroid'),
+      Uri.parse('https://b759-36-68-52-116.ngrok-free.app/loginAndroid'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -107,20 +107,7 @@ class _HomeState extends State<Home> {
                   Container(
                     margin: EdgeInsets.only(top: 5),
                     width: 250,
-                      // child: TextField(
-                      //   decoration: InputDecoration(
-                      //     contentPadding: EdgeInsets.all(10.0),
-                      //     hintText: 'Username',
-                      //     border: OutlineInputBorder(
-                      //       borderRadius: BorderRadius.circular(20.0)
-                      //       ),
-                      //       filled: true,
-                      //       fillColor: Colors.grey[200]
-                      //
-                      //   ),
-                      //   onChanged: (String name) {
-                      //   },
-                      // )
+
                   ),
                   Container(
                       margin: EdgeInsets.only(top: 5),
@@ -388,16 +375,7 @@ class Beranda extends StatelessWidget {
                   ],
                 ),
               ),
-              // Container(
-              //   child: Column(
-              //     children: [
-              //       Container(
-              //         child: Text("Call-to-Action",
-              //         ),
-              //       )
-              //     ],
-              //   ),
-              // )
+
               Flexible(flex: 1,child: Container(
                 padding: EdgeInsets.only(top: 20),
                 width: double.infinity,
@@ -451,40 +429,7 @@ class Beranda extends StatelessWidget {
               
             ],
           ),
-          // child: Column(
 
-            // children: [
-            //   Container(
-            //     padding: EdgeInsets.only(top: 60),
-            //     child: Text("Call-to-Action", style:
-            //       TextStyle(
-            //         fontSize: 30.0,
-            //         fontFamily: 'LeagueSpartan',
-            //         fontWeight: FontWeight.bold,
-            //         color: Colors.blue.shade900
-            //       ),),
-            //   ),
-            //   Container(
-            //     child: Text("Jaga Kesehatan Mentalmu Mulai Sekarang", style: TextStyle(
-            //       fontSize: 16.0,
-            //       fontFamily: 'LeagueSpartan',
-            //       fontWeight: FontWeight.bold,
-            //       color: Colors.blue.shade900
-            //     ),),
-            //   ),
-            //   Container(
-            //     width: 280,
-            //     child:
-            //     Image.asset("assets/image/calltoaction.png"),
-            //   ),
-            //   Container(
-            //     width: double.infinity,
-            //     child: Expanded(
-            //       child: Image.asset("assets/image/rileks.png",fit: BoxFit.fitHeight,),
-            //     )
-            //
-            //   )
-            // ],
           ),
         );
 
