@@ -23,8 +23,6 @@ void main(){
 
 class Home extends StatefulWidget {
   // const Home({super.key});
-
-
   @override
   State<Home> createState() => _HomeState();
 }
@@ -36,7 +34,7 @@ class _HomeState extends State<Home> {
 
   Future<void> _login() async {
     final response = await http.post(
-      Uri.parse('https://b759-36-68-52-116.ngrok-free.app/loginAndroid'),
+      Uri.parse('https://df2f-103-166-147-253.ngrok-free.app/loginAndroid'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },

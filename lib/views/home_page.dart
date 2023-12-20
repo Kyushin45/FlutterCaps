@@ -264,7 +264,7 @@ class _MyPageState extends State {
         .split('/')
         .last;
 
-    String uploadEndpoint = "https://b759-36-68-52-116.ngrok-free.app/uploadFileAndroid"; // Ganti dengan alamat server Flask yang sesuai
+    String uploadEndpoint = "https://df2f-103-166-147-253.ngrok-free.app/uploadFileAndroid"; // Ganti dengan alamat server Flask yang sesuai
     Dio dio = Dio();
 
     FormData formData = FormData.fromMap({
@@ -284,6 +284,7 @@ class _MyPageState extends State {
   }
 
   Future<void> sendJsonToFlask() async {
+    String? Stress;
     if (imageFile == null) {
       print('File gambar belum dipilih.');
       return;
@@ -295,7 +296,7 @@ class _MyPageState extends State {
       return;
     }
 
-    String apiUrl = "https://b759-36-68-52-116.ngrok-free.app/receive_json";
+    String apiUrl = "https://df2f-103-166-147-253.ngrok-free.app/receive_json";
     Dio dio = Dio();
 
     try {
@@ -317,7 +318,19 @@ class _MyPageState extends State {
         // }
         // print("Setres tingkat "+message);
 
-        _showAlertDialog(context, 'Tingkat Setress', 'Setress yang anda alami tingkat $message');
+        if(message == '[0.]'){
+          Stress = "0";
+        }else if(message == '[1.]'){
+          Stress = "Sedang";
+        }else if(message == '[2.]'){
+          Stress = "2";
+        }else if(message == '[3.]'){
+          Stress = "3";
+        }else{
+          print("ASD");
+        }
+
+        _showAlertDialog(context, 'Tingkat Setress', 'Setress yang anda alami tingkat $Stress');
       } else {
         print('Permintaan gagal. Kode respons: ${response.statusCode}');
       }

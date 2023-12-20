@@ -1,3 +1,4 @@
+import 'package:caps/chat_screen.dart';
 import 'package:caps/views/artikelrujukan.dart';
 import 'package:caps/views/home_page.dart';
 import 'package:caps/test.dart';
@@ -47,7 +48,8 @@ class Layanan extends StatelessWidget {
                               style: TextButton.styleFrom(
                                   backgroundColor: Colors.lightBlue[900]),
                               onPressed: () {
-                                // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Beranda()));
+
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChatScreen()));
                               },
                               child: Text(
                                 "Open Chatbot",
