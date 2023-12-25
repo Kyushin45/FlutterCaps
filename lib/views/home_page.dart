@@ -264,7 +264,7 @@ class _MyPageState extends State {
         .split('/')
         .last;
 
-    String uploadEndpoint = "https://df2f-103-166-147-253.ngrok-free.app/uploadFileAndroid"; // Ganti dengan alamat server Flask yang sesuai
+    String uploadEndpoint = "https://ca8e-118-96-24-103.ngrok-free.app/uploadFileAndroid"; // Ganti dengan alamat server Flask yang sesuai
     Dio dio = Dio();
 
     FormData formData = FormData.fromMap({
@@ -296,7 +296,7 @@ class _MyPageState extends State {
       return;
     }
 
-    String apiUrl = "https://df2f-103-166-147-253.ngrok-free.app/receive_json";
+    String apiUrl = "https://ca8e-118-96-24-103.ngrok-free.app/receive_json";
     Dio dio = Dio();
 
     try {
