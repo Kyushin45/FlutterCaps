@@ -1,6 +1,6 @@
-# caps
+# Capstone Project Mental Health
 
-A new Flutter project.
+First Project Flutter
 
 ## Getting Started
 
