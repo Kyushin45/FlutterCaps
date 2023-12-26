@@ -28,13 +28,38 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  void _showAlertDialog(BuildContext context, String title, String content) {
+    // Membuat AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text(title),
+      content: Text(content),
+      actions: <Widget>[
+        TextButton(
+          onPressed: () {
+            // Tutup alert
+            Navigator.of(context).pop();
+          },
+          child: Text('OK'),
+        ),
+      ],
+    );
+
+    // Menampilkan AlertDialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   Future<void> _login() async {
     final response = await http.post(
-      Uri.parse('https://ca8e-118-96-24-103.ngrok-free.app/loginAndroid'),
+      Uri.parse('https://de83-36-68-54-54.ngrok-free.app/loginAndroid'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -54,6 +79,7 @@ class _HomeState extends State<Home> {
     } else if (response.statusCode == 401) {
       // Invalid email or password, show an error message
       print('Invalid email or password');
+      _showAlertDialog(context, 'Pemberitahuan', ' Email atau Password salah');
     } else {
       // Other errors, handle accordingly
       print('Error: ${response.body}');
@@ -320,8 +346,39 @@ class _HomeState extends State<Home> {
   }
 }
 
-class Beranda extends StatelessWidget {
+class Beranda extends StatefulWidget {
   const Beranda({super.key});
+
+  @override
+  State<Beranda> createState() => _BerandaState();
+}
+
+class _BerandaState extends State<Beranda> {
+  void _showAlertDialog(BuildContext context, String title, String content) {
+    // Membuat AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text(title),
+      content: Text(content),
+      actions: <Widget>[
+        TextButton(
+          onPressed: () {
+            // Tutup alert
+            Navigator.of(context).pop();
+          },
+          child: Text('OK'),
+        ),
+      ],
+    );
+
+    // Menampilkan AlertDialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -366,7 +423,7 @@ class Beranda extends StatelessWidget {
                     Container(
                       width: 280,
                       padding: EdgeInsets.only(bottom: 9),
-                      child: 
+                      child:
                       Image.asset("assets/image/calltoaction.png"),
                     )
 
@@ -375,7 +432,7 @@ class Beranda extends StatelessWidget {
               ),
 
               Flexible(flex: 1,child: Container(
-                padding: EdgeInsets.only(top: 20),
+                padding: EdgeInsets.only(top: 10),
                 width: double.infinity,
 
                 decoration: new BoxDecoration(color: Color.fromRGBO(17, 0, 158, 1)),
@@ -424,7 +481,7 @@ class Beranda extends StatelessWidget {
                 ),
               ))
 
-              
+
             ],
           ),
 

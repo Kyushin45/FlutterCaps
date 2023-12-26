@@ -122,7 +122,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
 
   Future<String> _getBotResponse(String userMessage) async {
-    final String url = "https://ca8e-118-96-24-103.ngrok-free.app/chatbot_resAndroid";
+    final String url = "https://de83-36-68-54-54.ngrok-free.app/chatbot_resAndroid";
 
     final response = await http.post(
       Uri.parse(url),

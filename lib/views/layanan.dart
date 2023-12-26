@@ -4,6 +4,7 @@ import 'package:caps/views/chabot.dart';
 import 'package:caps/views/home_page.dart';
 import 'package:caps/test.dart';
 import 'package:caps/views/main.dart';
+import 'package:caps/views/sentimen_analisis.dart';
 import 'package:flutter/material.dart';
 
 class Layanan extends StatelessWidget {
@@ -193,7 +194,7 @@ class Layanan extends StatelessWidget {
                               style: TextButton.styleFrom(
                                   backgroundColor: Colors.lightBlue[900]),
                               onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyPage()));
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => sentimen()));
                               },
                               child: Text(
                                 "Open Analisis Sentimen",
